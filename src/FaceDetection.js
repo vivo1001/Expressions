@@ -1,17 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import './styles/FaceDetection.css'
 import * as faceapi from 'face-api.js'
 
 const FaceDetection = ({ data, available }) => {
 	const videoRef = useRef()
 	const canvasRef = useRef()
-	const [DetectedFace, setDetectedFace] = useState({})
-	const [Present, setPresent] = useState([])
 
 	const useTiny = true
 	let initialized = false
-	const inputSize = 512
-	const scoreThreshold = 0.5
 	const minConfidence = 0.7
 	
 	let objExpressionDescriptors = {}
